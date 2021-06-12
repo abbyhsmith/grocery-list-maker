@@ -18,6 +18,7 @@
 .labelDiv, .inputFieldDiv {
 	display: grid;
 	grid-template-columns: 65% 20% 15%;
+	grid-gap: 5px;
 }
 
 .labelDiv {

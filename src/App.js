@@ -1,4 +1,3 @@
-import './App.scss';
 import InputBar from './components/InputBar.js'
 import List from './components/List.js'
 import Footer from './components/Footer.js'
@@ -9,31 +8,29 @@ function App() {
 
 	useEffect(() => {
 		const cookies = document.cookie
-		const savedListItemsCookie = cookies.split('=')
-		const savedListItems = JSON.parse(savedListItemsCookie[1])
-		if (savedListItems && savedListItems.length > 0) {
-			setListItems(savedListItems)
-		}
-	}, [])
+		if (cookies) {
+			const savedListItemsCookie = cookies.split('=')
+			const savedListItems = JSON.parse(savedListItemsCookie[1])
+			if (savedListItems && savedListItems.length > 0) {
+				setListItems(savedListItems)
+			}
+	}}, [])
 
 	useEffect(() => {
 		if (listItems.length > 0) {
 			document.cookie = `savedListItems=${JSON.stringify(listItems)}`
+		} else {
+			document.cookie = 'savedListItems=; max-age=-1'
 		}
 	}, [listItems])
 
 	const handleSubmit = (item, quantity) => {
-		if (item === "" || quantity === '' || quantity.isNaN) {
-			document.getElementById('errorArea').innerHTML = "Please enter valid values in both fields"
-		} else {
-			setListItems([
-				...listItems, {
-					name: item,
-					quantity: quantity
-				}
-			])
-			document.getElementById('errorArea').innerHTML = ""
-		}
+		setListItems([
+			...listItems, {
+				name: item,
+				quantity: quantity
+			}
+		])
 	}
 
 	return (

@@ -4,7 +4,7 @@ const InputBar = ({handleSubmit}) => {
 	const [item, setItem] = useState('')
 	const [quantity, setQuantity] = useState('')
 
-	const handleOnClick = () => {
+	const handleOnSubmit = () => {
 		handleSubmit(item, quantity)
 		setItem('')
 		setQuantity('')
@@ -12,16 +12,15 @@ const InputBar = ({handleSubmit}) => {
 
 	return (
 		<div className="inputBar">
-			<p id="errorArea"></p>
-			<form className="inputForm">
+			<form className="inputForm" onSubmit={handleOnSubmit}>
 				<div className="labelDiv">
 					<label className="itemLabel" htmlFor="item">Item:</label>
 					<label className="quantityLabel" htmlFor="quantity">Quantity:</label>
 				</div>
 				<div className="inputFieldDiv">
-					<input type="text" className="item" name="item" placeholder="Enter name of item" onChange={(e) => setItem(e.target.value)} value={item} />
-					<input type="number" className="quantity" name="quantity" onChange={(e) => setQuantity(parseInt(e.target.value))} value={quantity} />
-					<button type="button" onClick={handleOnClick}>Add Item</button>
+					<input type="text" className="item" name="item" placeholder="Enter name of item" onChange={(e) => setItem(e.target.value)} value={item} required />
+					<input type="number" className="quantity" name="quantity" onChange={(e) => setQuantity(parseInt(e.target.value))} value={quantity} required />
+					<button type="submit">Add Item</button>
 				</div>
 			</form>
 		</div>
