@@ -12,9 +12,10 @@ const List = ({listItems, setListItems}) => {
 	}
 
 	const handleDecreaseQuantity = (i) => {
-		if (listItems.length > 1) {
-			const newListItems = [...listItems]
-			const itemToEdit = newListItems[i]
+		const newListItems = [...listItems]
+		const itemToEdit = newListItems[i]
+		
+		if (itemToEdit.quantity > 1) {
 			itemToEdit.quantity -= 1
 			setListItems(newListItems)
 		} else {
