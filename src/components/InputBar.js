@@ -12,6 +12,7 @@ const InputBar = ({handleSubmit}) => {
 
 	return (
 		<div className="inputBar">
+			<p id="errorArea"></p>
 			<form className="inputForm">
 				<div className="labelDiv">
 					<label className="itemLabel" htmlFor="item">Item:</label>

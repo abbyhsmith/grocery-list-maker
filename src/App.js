@@ -23,12 +23,17 @@ function App() {
 	}, [listItems])
 
 	const handleSubmit = (item, quantity) => {
-		setListItems([
-			...listItems, {
-				name: item,
-				quantity: quantity
-			}
-		])
+		if (item === "" || quantity === '' || quantity.isNaN) {
+			document.getElementById('errorArea').innerHTML = "Please enter valid values in both fields"
+		} else {
+			setListItems([
+				...listItems, {
+					name: item,
+					quantity: quantity
+				}
+			])
+			document.getElementById('errorArea').innerHTML = ""
+		}
 	}
 
 	return (
