@@ -1,0 +1,104 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.head {
+	text-align: center;
+	margin: 45px;
+	font-size: 50px;
+}
+
+.inputBar {
+	width: 35%;
+	margin: 50px auto;
+}
+
+.labelDiv, .inputFieldDiv {
+	display: grid;
+	grid-template-columns: 65% 20% 15%;
+}
+
+.labelDiv {
+	font-size: 18px;
+}
+
+.inputFieldDiv {
+	height: 30px;
+}
+
+.itemLabel, .item {
+	grid-column: 1 / 2;
+}
+
+.quantityLabel, .quantity {
+	grid-column: 2 / 3;
+}
+
+.listDiv {
+	width: 50%;
+	margin: 60px auto;
+	font-size: 18px;
+}
+
+.titleLine {
+	background-color: lightblue;
+}
+
+.titleLine, .userItems {
+	display: grid;
+	grid-template-columns: 5fr 1fr 2fr;
+}
+
+.itemTitle, .quantityTitle, .buttonDiv, .userItem, .userQuantity, .userButtons {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.itemTitle, .userItem {
+	grid-column: 1 / 2;
+}
+
+.quantityTitle, .userQuantity {
+	grid-column: 2 / 3;
+}
+
+.buttonDiv, .userButtons {
+	grid-column: 3 / 4;
+}
+
+.quantityTitle, .buttonDiv, .userQuantity, .userButtons {
+	border-left: 0;
+}
+
+.userItem, .userQuantity, .userButtons {
+	border-top: 0;
+}
+
+.userItem:nth-child(odd), .userQuantity:nth-child(even), .userButtons:nth-child(odd) {
+	background-color: rgb(230,230,230);
+}
+
+.userButtons {
+	display: flex;
+	justify-content: space-evenly;
+	button {
+		border: 0;
+		background-color: rgba(1,1,1,0);
+	}
+}
+
+.svgPlus, .svgMinus, .svgDelete {
+	width: 17px;
+	fill: black;
+}
+
+footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	padding: 15px;
+	background-color: rgb(230,230,230);
+}
