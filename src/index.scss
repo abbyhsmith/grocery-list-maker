@@ -137,3 +137,72 @@ button {
 	fill: black;
 }
 
+//media queries
+@media only screen and (max-width: 1200px) {
+	.clearButton {
+		width: 140px;
+	}
+
+	.listTable {
+		width: 685px;
+	}
+
+	.inputBar {
+		width: 572px;
+	}
+	.labelDiv, .inputFieldDiv {
+		grid-template-columns: 342px 84px 80px;
+		grid-gap: 11px;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	.listTable {
+		width: 500px;
+	}
+
+	.inputBar {
+		width: 480px;
+	}
+
+	.labelDiv, .inputFieldDiv {
+		grid-template-columns: 260px 76px 80px;
+		grid-gap: 10px;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	* {
+		font-size: 14px;
+	}
+
+	button {
+		font-size: 14px;
+	}
+
+	.listTable {
+		width: 350px;
+		margin: 20px auto;
+	}
+
+	.buttonTitle {
+		width: 25%;
+	}
+
+	.itemTitle {
+		max-width: 50%;
+	}
+
+	.svgPlus, .svgMinus, .svgDelete {
+		width: 10px;
+	}
+
+	.inputBar {
+		width: 350px;
+		margin: 20px auto;
+	}
+
+	.labelDiv, .inputFieldDiv {
+		grid-template-columns: 160px 60px 65px;
+	}
+}
