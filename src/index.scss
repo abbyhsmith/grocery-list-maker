@@ -1,24 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 18px;
 }
 
+//page styles
 .head {
+	font-weight: 300;
 	text-align: center;
 	margin: 45px;
 	font-size: 50px;
 }
 
+body {
+	background-color: rgb(251,229,255);
+}
+
+//input bar
 .inputBar {
-	width: 35%;
+	width: 45%;
 	margin: 50px auto;
+	border: 2px dotted black;
+	padding: 25px 20px;
 }
 
 .labelDiv, .inputFieldDiv {
 	display: grid;
-	grid-template-columns: 65% 20% 15%;
-	grid-gap: 5px;
+	grid-template-columns: 63% 18% 15%;
+	grid-gap: 2%;
 }
 
 .labelDiv {
@@ -37,69 +50,90 @@
 	grid-column: 2 / 3;
 }
 
-.listDiv {
+//list
+.listTable {
 	width: 50%;
 	margin: 60px auto;
-	font-size: 18px;
+	border-collapse: collapse;
+}
+
+th {
+	text-align: left;
+	font-weight: 400;
 }
 
 .titleLine {
-	background-color: lightblue;
+	background-color: rgb(201,234,255);
 }
 
-.titleLine, .userItems {
-	display: grid;
-	grid-template-columns: 5fr 1fr 2fr;
-}
-
-.itemTitle, .quantityTitle, .buttonDiv, .userItem, .userQuantity, .userButtons {
+.itemTitle, .quantityTitle, .userItem, .userQuantity {
 	border: 1px solid black;
 	padding: 5px;
 }
 
-.itemTitle, .userItem {
-	grid-column: 1 / 2;
-}
-
 .quantityTitle, .userQuantity {
-	grid-column: 2 / 3;
-}
-
-.buttonDiv, .userButtons {
-	grid-column: 3 / 4;
-}
-
-.quantityTitle, .buttonDiv, .userQuantity, .userButtons {
 	border-left: 0;
+	width: 15%;
 }
 
-.userItem, .userQuantity, .userButtons {
+.buttonTitle {
+	width: 20%;
+}
+
+.userItem, .userQuantity {
 	border-top: 0;
 }
 
-.userItem:nth-child(odd), .userQuantity:nth-child(even), .userButtons:nth-child(odd) {
+.userQuantity {
+	text-align: center;
+}
+
+.itemRow:nth-child(odd) {
 	background-color: rgb(230,230,230);
 }
 
+.itemRow:nth-child(even) {
+	background-color: white;
+}
+
+//buttons
+button {
+	font-size: 18px;
+	background-color: rgb(142,106,146);
+	border: 0;
+	border-radius: 5px;
+	color: white;
+	padding: 2px;
+	height: 30px;
+	&:hover {
+		background-color: rgb(117,61,131);
+	}
+}
+
+.buttonTitle, .userButtons {
+	border: 1px solid black;
+	border-left: 0;
+	padding: 5px;
+}
+
 .userButtons {
-	display: flex;
-	justify-content: space-evenly;
+	border-top: 0;
 	button {
 		border: 0;
 		background-color: rgba(1,1,1,0);
 	}
 }
 
+.clearButton {
+	display: block;
+	margin: 0 auto;
+	width: 10%;
+}
+
+//svgs
 .svgPlus, .svgMinus, .svgDelete {
 	width: 17px;
+	margin: 0 4px;
 	fill: black;
 }
 
-footer {
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-	text-align: center;
-	padding: 15px;
-	background-color: rgb(230,230,230);
-}

@@ -1,6 +1,6 @@
 import InputBar from './components/InputBar.js'
 import List from './components/List.js'
-import Footer from './components/Footer.js'
+import ClearButton from './components/ClearButton.js'
 import {useState, useEffect} from 'react'
 
 function App() {
@@ -33,12 +33,16 @@ function App() {
 		])
 	}
 
+	const handleClearListItems = () => {
+		setListItems([])
+	}
+
 	return (
 		<div className="App">
 			<h1 className="head">Grocery List</h1>
 			<InputBar handleSubmit={handleSubmit} />
 			<List listItems={listItems} setListItems={setListItems} />
-			<Footer />
+			<ClearButton handleClearListItems={handleClearListItems} />
 		</div>
 	);
 }

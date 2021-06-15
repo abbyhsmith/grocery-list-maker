@@ -30,40 +30,38 @@ const List = ({listItems, setListItems}) => {
 	}
 
 	return (
-		<div className="listDiv">
-			<div className="titleLine">
-				<div className="itemTitle">
+		<table className="listTable">
+			<tr className="titleLine">
+				<th className="itemTitle">
 					Item Name:
-				</div>
-				<div className="quantityTitle">
+				</th>
+				<th className="quantityTitle">
 					Quantity:
-				</div>
-				<div className="buttonDiv">
+				</th>
+				<th className="buttonTitle">
 
-				</div>
-			</div>
-			<div className="userItems">
+				</th>
+			</tr>
 				{
 					listItems.map((item, i) => {
 						return(
-							<React.Fragment key={`userItem-${i}`}>
-								<div className="userItem">
+							<tr className="itemRow" key={`userItem-${i}`}>
+								<td className="userItem">
 									{item.name}
-								</div>
-								<div className="userQuantity">
+								</td>
+								<td className="userQuantity">
 									{item.quantity}
-								</div>
-								<div className="userButtons">
+								</td>
+								<td className="userButtons" valign="center" align="center">
 									<button type="button" onClick={() => handleIncreaseQuantity(i)}><SvgPlus /></button>
 									<button type="button" onClick={() => handleDecreaseQuantity(i)}><SvgMinus /></button>
 									<button type="button" onClick={() => handleDeleteItem(i)}><SvgDelete /></button>
-								</div>
-							</React.Fragment>
+								</td>
+							</tr>
 						)
 					})
 				}
-			</div>
-		</div>
+		</table>
 	)
 }
 
