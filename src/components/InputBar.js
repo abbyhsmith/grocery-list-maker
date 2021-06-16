@@ -18,8 +18,8 @@ const InputBar = ({handleSubmit}) => {
 					<label className="quantityLabel" htmlFor="quantity">Quantity:</label>
 				</div>
 				<div className="inputFieldDiv">
-					<input type="text" className="item" name="item" placeholder="Enter name of item" onChange={(e) => setItem(e.target.value)} value={item} required />
-					<input type="number" className="quantity" name="quantity" onChange={(e) => setQuantity(parseInt(e.target.value))} value={quantity} required />
+					<input type="text" className="item" name="item" id="item" placeholder="Enter name of item" onChange={(e) => setItem(e.target.value)} value={item} required />
+					<input type="number" className="quantity" name="quantity" id="quantity" onChange={(e) => setQuantity(parseInt(e.target.value))} value={quantity} required />
 					<button type="submit">Add Item</button>
 				</div>
 			</form>
